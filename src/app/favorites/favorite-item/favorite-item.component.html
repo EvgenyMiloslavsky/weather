@@ -1,0 +1,15 @@
+<mat-card *ngIf="weatherItem">
+  <div fxLayout="row" fxLayoutAlign="space-between start" fxFlex="100">
+    <div id="local-weather">
+      <div mat-card-avatar class="example-header-image">
+        <img
+          src="https://developer.accuweather.com/sites/default/files/{{weatherItem.weatherIcon  | number:'2.'}}-s.png"
+          alt="">
+      </div>
+      <mat-card-title>
+        <div>{{weatherItem.city}}</div>
+        <div>{{weatherItem.temperature}}</div>
+      </mat-card-title>
+    </div>
+  </div>
+</mat-card>

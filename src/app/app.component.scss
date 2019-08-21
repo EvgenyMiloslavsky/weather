@@ -1,0 +1,31 @@
+mat-sidenav{
+  width: 280px;
+  height: 100vh;
+}
+
+main{
+  margin-top: 1rem;
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.background {
+ /* color: white;
+  opacity: .75%;*/
+  /*
+  min-height: calc(100vh - 112px);
+  */
+
+  background: /* top, transparent red, faked with gradient */
+    /*linear-gradient(
+        rgba(52, 198, 235, 0.25),
+        rgba(52, 198, 235, 0.25)
+    ),*/
+    /* bottom, image */
+    url(../assets/img/photo_2019-08-05_23-48-33.jpg) no-repeat top center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}

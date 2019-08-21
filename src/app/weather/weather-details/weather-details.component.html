@@ -1,0 +1,33 @@
+<div fxLayoutAlign="center center">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div fxLayout="row" fxLayoutAlign="space-between start" fxFlex="100">
+        <div id="local-weather">
+          <div mat-card-avatar class="example-header-image">
+            <img *ngIf="currentWeather"
+                 src="https://developer.accuweather.com/sites/default/files/{{currentWeather?.weatherIcon  | number:'2.'}}-s.png"
+                 alt="">
+          </div>
+          <mat-card-title>
+            <div>{{currentWeather?.city}}</div>
+            <div>{{currentWeather?.temperature}}</div>
+          </mat-card-title>
+        </div>
+        <div fxFlex="30" id="favorite" fxLayout="row" fxLayoutAlign="end stat">
+          <div>
+            <mat-icon *ngIf="!favoriteStatus ; else onFavorite ">favorite_border</mat-icon>
+          </div>
+          <ng-template #onFavorite>
+            <mat-icon >favorite</mat-icon>
+          </ng-template>
+          <button mat-raised-button color="primary" (click)="addToFavorites()" [disabled]="favoriteStatus">
+            Add To Favorite
+          </button>
+        </div>
+      </div>
+    </mat-card-header>
+    <mat-card-content>
+      <h1 class="mat-h1">{{currentWeather?.weatherText}}</h1>
+    </mat-card-content>
+  </mat-card>
+</div>
