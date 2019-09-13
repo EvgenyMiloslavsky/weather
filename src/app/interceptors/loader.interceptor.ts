@@ -2,22 +2,11 @@ import {Injectable} from '@angular/core';
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {LoaderService} from '../loader/loader.service';
-import {delay, finalize} from 'rxjs/operators';
 
 @Injectable()
 
 export class LoaderInterceptor implements HttpInterceptor {
-  /* constructor(public loaderService: LoaderService) {
-   }
 
-   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-   /*this.loaderService.show();
-
-     return next.handle(req).pipe(
-       // delay(5000),
-       finalize(() => this.loaderService.hide())
-     );
-   }*/
   private requests: HttpRequest<any>[] = [];
 
   constructor(private loaderService: LoaderService) {
@@ -36,7 +25,7 @@ export class LoaderInterceptor implements HttpInterceptor {
     this.requests.push(req);
     console.log('No of requests--->' + this.requests.length);
     this.loaderService.isLoading.next(true);
-    return Observable.create(observer => {
+    return new Observable(observer => {
       const subscription = next.handle(req)
         .subscribe(
           event => {

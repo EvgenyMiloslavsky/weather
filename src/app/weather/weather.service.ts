@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Subject} from 'rxjs';
 import {environment} from '../../environments/environment';
-import {flatMap, map, switchMap} from 'rxjs/operators';
+import {map, switchMap} from 'rxjs/operators';
 import {WeatherModel} from './weather.model';
 
 @Injectable({
@@ -37,7 +37,17 @@ export class WeatherService {
       .get(
         `/locations/v1/cities/search?apikey=&q=${city}&language=en-us&details=false`
         // `assets/JSON/city-search.json`
-      ).pipe(
+      ).pipe(/* constructor(public loaderService: LoaderService) {
+   }
+
+   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+   /*this.loaderService.show();
+
+     return next.handle(req).pipe(
+       // delay(5000),
+       finalize(() => this.loaderService.hide())
+     );
+   }*/
       map(res => {
         this.locationKey = res[0].Key;
         console.log(`Location Key ${this.locationKey}`);
