@@ -1,12 +1,11 @@
 import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
 import {
   MatAutocompleteModule,
   MatButtonModule, MatCardModule,
   MatCheckboxModule,
   MatDatepickerModule, MatFormFieldModule,
   MatIconModule, MatInputModule, MatListModule, MatProgressSpinnerModule,
-  MatSidenavModule,
+  MatSidenavModule, MatSlideToggleModule,
   MatToolbarModule
 } from '@angular/material';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -21,8 +20,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatCardModule,
     MatAutocompleteModule,
     MatInputModule,
-    MatProgressSpinnerModule
-
+    MatProgressSpinnerModule,
+    MatSlideToggleModule
   ],
   exports: [
     MatButtonModule,
@@ -33,8 +32,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     MatCardModule,
     MatAutocompleteModule,
     MatInputModule,
-    MatProgressSpinnerModule
-
+    MatProgressSpinnerModule,
+    MatSlideToggleModule
   ]
 })
 export class MaterialModule {

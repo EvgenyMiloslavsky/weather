@@ -20,6 +20,8 @@ import {CachingInterceptor} from './interceptors/caching.interceptor';
 import {UrlInterceptor} from './interceptors/url.interceptor';
 import {LoaderInterceptor} from './interceptors/loader.interceptor';
 import { LoaderComponent } from './loader/loader.component';
+import {SharedModule} from './shared.module';
+import {MatSlideToggleModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -30,20 +32,20 @@ import { LoaderComponent } from './loader/loader.component';
     WeatherComponent,
     SearchLocationComponent,
     ForecastComponent,
-    FavoriteItemComponent,
-    FavoritesComponent,
+    // FavoriteItemComponent,
+    // FavoritesComponent,
     LoaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    FlexLayoutModule,
+    /*MaterialModule,
+    FlexLayoutModule,*/
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-
+    SharedModule,
   ],
   providers: [
     // {provide: HTTP_INTERCEPTORS, useClass: CachingInterceptor, multi: true},
