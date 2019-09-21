@@ -1,9 +1,7 @@
-<!--
-<div [class]="'alternate-theme'">
--->
+<div [class.alternate-theme]="true">
 <mat-sidenav-container class="example-container background" style="height: 100vh" >
   <mat-sidenav #sidenav role="navigation">
-    <app-sidenav-list></app-sidenav-list>
+    <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
   </mat-sidenav>
   <mat-sidenav-content style="height: 100vh; align-content:center">
     <header>
@@ -14,4 +12,4 @@
     </main>
   </mat-sidenav-content>
 </mat-sidenav-container>
-<!--</div>-->
+</div>
