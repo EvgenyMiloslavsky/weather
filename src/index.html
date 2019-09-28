@@ -8,9 +8,13 @@
   <!--  <meta http-equiv="Content-Security-Policy" content="default-src 'self' gap:; script-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; object-src *; style-src 'self' data: 'unsafe-inline'; img-src 'self' data:; media-src 'self' data:; font-src 'self' data:; connect-src * https://fonts.googleapis.com/">-->
   <meta
     http-equiv="Content-Security-Policy"
-    content="default-src 'self';
-    font-src 'self' https://fonts.gstatic.com/;
-    style-src 'self' https://fonts.googleapis.com/ 'unsafe-inline'">
+    content="
+      default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval';
+      style-src   'self' https://fonts.googleapis.com;
+      font-src    'self' data: https://fonts.gstatic.com;
+      img-src     'self' data: content:;
+      media-src   *;
+    ">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
